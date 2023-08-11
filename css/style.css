@@ -1,0 +1,166 @@
+
+	    @font-face{
+	        font-family: Bookman;
+	        src: url('../Bookman.otf');
+	        font-display: swap;
+	    }
+	    a{
+	        color: #5E8EFF;
+	        text-decoration: none;
+	        word-break: break-word;
+	        overflow-x: scroll;
+	    }
+	    a:visited{
+	        color: #AFAFAD;
+	    }
+	    *{
+	        box-sizing: border-box;
+	        font-family: Bookman;
+	        word-break: break-word;
+	        padding: 0px;
+	        margin: 0px;
+	    }
+	    img{
+	        display: none;
+	        width: 0%;
+	        overflow-x: scroll;
+	        height: 0%;
+	    }
+	    hr{
+	        height: 2px;
+	        border: none;
+	        background: #AFAFAD;
+	    }
+	    div{
+	        display: grid;
+	        word-break: break-word;
+	    }
+	    html{
+	        padding: 0px;
+	        margin: 0px;
+	    }
+	    body{
+	        padding: 2em;
+	        margin: 0em;
+	        background: #16161D;
+	        padding-bottom: 4em;
+	        color: #AFAFAD;
+	        width: 100%;
+	    }
+	    table{
+	        display: grid;
+	        text-align: center;
+	        width: 100%;
+	    }
+	    table tr, table td{
+	        display: grid;
+	        text-align: center;
+	        line-height: 1.5;
+	    }
+	    table tr p{
+	        display: grid;
+	        text-align: center;
+	        line-height: 1.5;
+	    }
+	    table p, table a, table td a{
+	        display: grid;
+	        text-align: center;
+	        text-decoration: none;
+	    }
+	    pre, span, i, blockquote, ul, code, dd, dl, dt{
+	        margin: 0px;
+	        padding: 0px;
+	        overflow-x: scroll;
+	        line-height: 1.5;
+	        font-size: normal;
+	    }
+	    h1, h2, h3, h4, h5, h6, p, li{
+	        margin: 1em 0em 1em 0em;
+	        overflow-x: scroll;
+	        word-break: break-word;
+	        text-align: center;
+	    }
+	    h1, table{
+	        text-align: center;
+	        word-break: break-word;
+	        overflow-x: scroll;
+	    }
+	    p, li{
+	        word-break: break-word;
+	        text-align: justify;
+	        overflow-x: scroll;
+	        line-height: 1.5;
+	        font-size: normal;
+	    }
+	    li{
+	        margin-left: 1.15em;
+	        overflow-x: scroll;
+	    }
+	    .top-btn{
+	        position: fixed;
+	        bottom: 5%;
+	        right: 5%;
+	        background: #5E8EFF;
+	        color: #FAF9F6;
+	        padding: .75em;
+	        border: 2px solid #FAF9F6;
+	        outline: none;
+	        border-radius: 5px;
+	        text-transform: uppercase;
+	    }
+	    .header{
+	        position: fixed;
+	        left: 0%;
+	        bottom: 0%;
+	        font-size: 1.25em;
+	        text-decoration: none;
+	        border-top-right-radius: 5px;
+	        border-top: 2px solid #FAF9F6;
+	        border-right: 2px solid #FAF9F6;
+	        border-left: none;
+	        border-bottom: none;
+	        outline: none;
+	        text-transform: uppercase;
+	        background: #5E8EFF;
+	        color: #FAF9F6;
+	        padding: .75em;
+	        padding: .45em;
+	    }
+	    .progress-bar{
+	        height: 5px;
+            background-color: #AFAFAD;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+	    }
+	    .notif{
+	        position: fixed;
+	        top: 50%;
+	        left: 50%;
+	        transition: all .3s ease-in;
+	        animation-name: fade;
+	        animation-direction: ease-in;
+	        animation-duration: .3s;
+	        transform: translate(-50%, -50%);
+	        border: 2px solid  #FAF9F6;
+	        text-align: center;
+	        color: #FAF9F6;
+	        width: 75%;
+	        border-radius: 5px;
+	        background: #5E8EFF;
+	        padding: 1em;
+	    }
+	    .toc{
+	        text-align: center;
+	    }
+	    @keyframes fade{
+	        0%{
+	            margin-top: -300px;
+	            opacity: 0;
+	        }
+	        100%{
+	            margin-top: 0px;
+	            opacity: 1;
+	        }
+	    }
