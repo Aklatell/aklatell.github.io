@@ -1,7 +1,7 @@
 
 	    @font-face{
 	        font-family: Bookman;
-	        src: url('../Bookman.otf');
+	        src: url('../assets/Bookman.otf');
 	        font-display: swap;
 	    }
 	    a{
@@ -67,7 +67,7 @@
 	        text-align: center;
 	        text-decoration: none;
 	    }
-	    pre, span, i, blockquote, ul, code, dd, dl, dt{
+	    pre, span, i, blockquote, code, dd, dl, dt{
 	        margin: 0px;
 	        padding: 0px;
 	        overflow-x: scroll;
