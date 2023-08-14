@@ -19,7 +19,12 @@
             
               progressBarDiv.style.width = progressWidth + '%';
 	    });
-        
+        let ad = document.createElement('span');
+        ad.className = 'ad';
+        ad.innerHTML =
+        `
+        <iframe data-aa='2247755' src='//ad.a-ads.com/2247755?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+        `;
 	    window.addEventListener('DOMContentLoaded', () => {
 	        
 	        // more content global variable
@@ -73,4 +78,5 @@
 	        moreContent.append(header);
 	        moreContent.append(progressBarDiv);
 	        moreContent.append(ciScript);
+	        moreContent.append(ad);
 	    });
