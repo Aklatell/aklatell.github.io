@@ -134,6 +134,15 @@
             left: 0;
             width: 0;
 	    }
+	    .ad{
+	        display: grid;
+	        transform: translate(-50%);
+	        justify-content: center;
+	        align-content: center;
+	        position: fixed;
+	        top: 0%;
+	        left: 50%;
+	    }
 	    @keyframes fade{
 	        0%{
 	            margin-top: -300px;
