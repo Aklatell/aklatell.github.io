@@ -137,7 +137,7 @@
 	    }
 	    .ad{
 	        display: grid;
-	        transform: translate(-50%);
+	        transform: translate(-50%, 11%);
 	        justify-content: center;
 	        align-content: center;
 	        position: fixed;
