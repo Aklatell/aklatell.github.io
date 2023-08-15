@@ -16,8 +16,8 @@
             *{
                 font-family: Bookman;
                 box-sizing: border-box;
-                padding: 0em;
-                margin: 0em;
+                padding: 0px;
+                margin: 0px;
             }
             img{
                 width: 100%;
@@ -28,22 +28,20 @@
                 color: #AFAFAD;
             }
             header{
-                box-shadow: .5em .5em 1em .5em #12121B;
+                box-shadow: 1px  1px 2px 1px #12121B;
                 text-align: center;
                 background: #D98301;
                 background: linear-gradient(135deg, #D98301, #FF9501);
                 text-shadow: 1px 1px #FF9501;
                 color: #16161D;
                 z-index: 5;
-                padding: .5em;
-            }
-            main{
-                padding-bottom: 2.75em;
+                padding: 10px;
             }
             .search{
                 width: 100%;
-                padding: .5em;
-                padding-bottom: 0em;
+                padding: 6px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
             .search form{
                 display: flex;
@@ -52,26 +50,27 @@
             }
             .search form input{
                 width: 100%;
-                padding: .5em;
+                padding: 8px;
                 color: #16161D;
                 border: 2px solid #FAF9F6;
                 text-align: center;
                 outline: none;
             }
             .ebooks{
-                padding: .5em .5em 1em .5em;
+                padding: 6px;
+                padding-top: 0px;
             }
             .ebooks ul{
                 display: grid;
                 list-style: none;
                 grid-template-columns: 33.33% 33.33% 33.33%;
-                padding: 0em .5em 0em .5em;
+                padding: 0px 10px 0px 10px;
                 justify-content: space-evenly;
-                gap: .5em;
+                gap: 6px;
             }
             .ebooks ul li{
                 display: grid;
-                padding: .25em;
+                padding: 4px;
                 background: #D98301;
                 justify-content: center;
                 align-items: center;
@@ -91,7 +90,7 @@
             .ebooks ul li p{
                 display: grid;
                 text-shadow: 1px 1px #FF9501;
-                padding-top: .15em;
+                padding-top: 4px;
                 font-size: 10px;
                 text-transform: uppercase;
                 text-decoration: none;
@@ -107,13 +106,13 @@
             .menu{
                 position: fixed;
                 width: 100%;
-                bottom: 0em;
-                left: 0em;
+                bottom: 0px;
+                left: 0px;
             }
             .menu ul{
                 display: flex;
                 list-style: none;
-                box-shadow: .5em .5em 1em .5em #12121B;
+                box-shadow: 1px  1px 2px 1px #12121B;
                 background: #D98301;
                 justify-content: space-between;
                 z-index: 5;
@@ -124,7 +123,7 @@
             }
             .menu ul li a{
                 text-decoration: none;
-                padding-top: .5em;
+                padding-top: 6px;
                 display: grid;
             }
             .menu ul li img{
@@ -141,12 +140,23 @@
                 text-shadow: 1px 1px #FF9501;
                 text-transform: uppercase;
                 text-align: center;
-                margin-top: .2em;
             }
             .ad{
-                padding-top: .5em;
+                padding-top: 6px;
+            }
+            .share{
+                width: 50%;
+                margin: auto;
+                padding: 10px;
+            }
+            .share img{
+                height: 32px;
+                width: 100%;
             }
         </style>
+        <!-- AddToAny BEGIN -->
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <!-- AddToAny END -->
     </head>
     <body oncontextmenu="return false">
         <header>
@@ -209,6 +219,11 @@
             </section>
         </main>
         <footer>
+            <section class="share">
+                <a class="a2a_dd" href="https://www.addtoany.com/share">
+                    <img src="https://static.addtoany.com/buttons/share_save_171_16.png" border="0" alt="Share">
+                </a>
+            </section>
             <section class="menu">
                 <ul>
                     <li>
