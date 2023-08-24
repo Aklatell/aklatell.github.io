@@ -19,12 +19,24 @@
             
               progressBarDiv.style.width = progressWidth + '%';
 	    });
+	    
+	    let share = document.createElement('script');
+	    share.src = 'https://static.addtoany.com/menu/page.js';
+	    let shareBtn = document.createElement('a');
+	        shareBtn.href = 'https://www.addtoany.com/share';
+	        shareBtn.className = 'a2a_dd';
+	        shareBtn.textContent = 'Share'
+	    share.addEventListener('load', () => {
+	        
+	    });
+	    // a-ads
         let ad = document.createElement('span');
         ad.className = 'ad';
         ad.innerHTML =
         `
         <iframe data-aa='2247755' src='//ad.a-ads.com/2247755?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
         `;
+        // script
 	    window.addEventListener('DOMContentLoaded', () => {
 	        
 	        // more content global variable
@@ -72,6 +84,12 @@
                     window.scrollTo(0, 0);
                 }
             },1000);
+            
+            // hide ad
+            setTimeout(() => {
+                ad.style.display = 'none';
+            }, 15000);
+            
 	        });
 	        // append more content
 	        moreContent.append(homeBtn);
@@ -79,4 +97,6 @@
 	        moreContent.append(progressBarDiv);
 	        moreContent.append(ciScript);
 	        moreContent.append(ad);
+	        moreContent.append(share);
+	        moreContent.append(shareBtn);
 	    });
