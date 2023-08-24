@@ -48,6 +48,9 @@
             z-index: 5;
             padding: 10px;
         }
+        main {
+            padding-bottom: 64px;
+        }
         .search {
             width: 100%;
             padding: 6px;
@@ -89,21 +92,20 @@
         }
         .ebooks ul li .cover {
             height: 145px;
-            width: 100%;
-            object-fit: fill;
+            width: 100px;
+            margin: auto;
             overflow: hidden;
         }
         .ebooks ul li .cover img {
             height: 100%;
             width: 100%;
             object-fit: fill;
-            overflow: hidden;
         }
         .ebooks ul li h2 {
             display: grid;
             text-shadow: 1px 1px #FF9501;
             padding-top: 4px;
-            font-size: 10px;
+            font-size: 12px;
             text-transform: uppercase;
             text-decoration: none;
             text-align: center;
@@ -156,7 +158,7 @@
         }
         .favorites li .cover {
             height: 145px;
-            width: 100%;
+            width: 100px;
             object-fit: fill;
             overflow: hidden;
         }
@@ -164,13 +166,12 @@
             height: 100%;
             width: 100%;
             object-fit: fill;
-            overflow: hidden;
         }
         .favorites li h2 {
             display: grid;
             text-shadow: 1px 1px #FF9501;
             padding-top: 4px;
-            font-size: 10px;
+            font-size: 12px;
             text-transform: uppercase;
             text-decoration: none;
             text-align: center;
@@ -213,7 +214,7 @@
         }
         .menu ul li span {
             display: block;
-            font-size: 10px;
+            font-size: 12px;
             margin-top: 6px;
             color: #16161D;
             text-shadow: 1px 1px #FF9501;
@@ -259,6 +260,24 @@
                 margin-top: 0px;
             }
         }
+@media screen and (min-width: 720px) {
+            .ebooks ul {
+                grid-template-columns: 25% 25% 25% 25%;
+                padding: 0px 12px 0px 12px;
+            }
+            .ebooks ul li .cover {
+                height: 210px;
+                width: 165px;
+            }
+            .favorites {
+                grid-template-columns: 25% 25% 25% 25%;
+                padding: 12px 12px 24px 12px;
+            }
+            .favorites li .cover {
+                height: 210px;
+                width: 165px;
+            }
+        }
     </style>
     <!-- AddToAny BEGIN -->
     <script async src="https://static.addtoany.com/menu/page.js"></script>
@@ -283,48 +302,48 @@
             <ul id="ebook-list">
                 <li>
                     <div class="cover">
-                        <a href="ebooks/eBook of A Room With a View, by E. M. Forster.html">
-                            <img src="covers/a-room.jpg">
+                        <a href="ebooks/eBook of A Room With a View, by E. M. Forster.html" aria-label="Read eBook">
+                            <img src="covers/a-room.jpg" alt="Cover">
                         </a>
                     </div>
                     <h2>A Room With a View</h2>
-                    <button>Favorite</button>
+                    <button aria-label="Favorite">Favorite</button>
                 </li>
                 <li>
                     <div class="cover">
-                        <a href="ebooks/eBook of Middlemarch, by George Eliot.html">
-                            <img src="covers/middlemarch.jpg">
+                        <a href="ebooks/eBook of Middlemarch, by George Eliot.html" aria-label="Read eBook">
+                            <img src="covers/middlemarch.jpg" alt="Cover">
                         </a>
                     </div>
                     <h2>Middlemarch</h2>
-                    <button>Favorite</button>
+                    <button aria-label="Favorite">Favorite</button>
                 </li>
                 <li>
                     <div class="cover">
-                        <a href="ebooks/eBook of Little Women, by Louisa M. Alcott.html">
-                            <img src="covers/little-women.jpg">
+                        <a href="ebooks/eBook of Little Women, by Louisa M. Alcott.html" aria-label="Read eBook">
+                            <img src="covers/little-women.jpg" alt="Cover">
                         </a>
                     </div>
                     <h2>Little Women</h2>
-                    <button>Favorite</button>
+                    <button aria-label="Favorite">Favorite</button>
                 </li>
                 <li>
                     <div class="cover">
-                        <a href="ebooks/The Blue Castle.html">
-                            <img src="covers/blue-castle.jpg">
+                        <a href="ebooks/The Blue Castle.html" aria-label="Read eBook">
+                            <img src="covers/blue-castle.jpg" alt="Cover">
                         </a>
                     </div>
                     <h2>Blue Castle</h2>
-                    <button>Favorite</button>
+                    <button aria-label="Favorite">Favorite</button>
                 </li>
                 <li>
                     <div class="cover">
-                        <a href="ebooks/eBook of The Enchanted April, by Elizabeth Von Arnim.html">
-                            <img src="covers/enchanted-april.jpg">
+                        <a href="ebooks/eBook of The Enchanted April, by Elizabeth Von Arnim.html" aria-label="Read eBook">
+                            <img src="covers/enchanted-april.jpg" alt="Cover">
                         </a>
                     </div>
                     <h2>The Enchanted April</h2>
-                    <button>Favorite</button>
+                    <button aria-label="Favorite">Favorite</button>
                 </li>
             </ul>
         </section>
@@ -352,32 +371,32 @@
                 </li>
                 <li>
                     <a href="contact.html">
-                        <img src="assets/contact.png">
+                        <img src="assets/contact.png" alt="Contact Icon">
                         <span>Contact</span>
                     </a>
                 </li>
                 <li>
                     <a href="about.html">
-                        <img src="assets/about.png">
+                        <img src="assets/about.png" alt="About Icon">
                         <span>About</span>
                     </a>
                 </li>
                 <li>
                     <a class="a2a_dd" href="https://www.addtoany.com/share">
-                        <img src="assets/sharing.png">
+                        <img src="assets/sharing.png" alt="Share Icon">
                         <span>Share</span>
                     </a>
                 </li>
             </ul>
         </section>
-        <button class="fav-btn"><img src="assets/favorite.png"></button>
+        <button class="fav-btn" aria-label="Show Favorite Button"><img src="assets/favorite.png" alt="Favorite Icon"></button>
         <p class="added">
             eBook has been added to favorites.
         </p>
         <p class="exists">
             eBook is already added in favorites.
         </p>
-        <button id="install-button" style="display: none;">Install PWA</button>
+        <button id="install-button" style="display: none;" aria-label="Install PWA">Install PWA</button>
     </footer>
     <script>
         let favBtn = document.querySelector('.fav-btn');
