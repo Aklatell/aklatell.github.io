@@ -32,7 +32,7 @@
 	        background: #AFAFAD;
 	    }
 	    div{
-	        display: grid;
+	        overflow: scroll;
 	        word-break: break-word;
 	    }
 	    html{
@@ -143,6 +143,19 @@
 	        position: fixed;
 	        top: 0%;
 	        left: 50%;
+	    }
+	    .a2a_dd{
+	        text-decoration: none;
+	        overflow: hidden;
+	        background: #D98301;
+	        color: #FAF9F6;
+	        border: 2px solid #FAF9F6;
+	        border-radius: 5px;
+	        text-transform: uppercase;
+	        padding: 10px;
+	        position: fixed;
+	        right: 1%;
+	        top: 80%;
 	    }
 	    @keyframes fade{
 	        0%{
