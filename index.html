@@ -92,7 +92,7 @@
         }
         .ebooks ul li .cover {
             height: 145px;
-            width: 135px;
+            width: 100px;
             margin: auto;
             overflow: hidden;
         }
@@ -290,7 +290,7 @@
     <main>
         <section class="ad">
             <center>
-                <iframe data-aa='2247755' src='//ad.a-ads.com/2247755?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+                <iframe data-aa='2247755' src='//ad.a-ads.com/2247755?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;' title="A-ads Advertisement"></iframe>
             </center>
         </section>
         <section class="search">
@@ -359,13 +359,13 @@
             <ul>
                 <li>
                     <a href="request.html">
-                        <img src="assets/request.png">
+                        <img src="assets/request.png" alt="Request Icon">
                         <span>Request</span>
                     </a>
                 </li>
                 <li>
                     <a href="home.html">
-                        <img src="assets/home.png">
+                        <img src="assets/home.png" alt="Home Icon">
                         <span>Home</span>
                     </a>
                 </li>
@@ -389,7 +389,7 @@
                 </li>
             </ul>
         </section>
-        <button class="fav-btn" aria-label="Show Favorite Button"><img src="assets/favorite.png" alt="Favorite Icon"></button>
+        <button class="fav-btn" aria-label="Show Favorite Button"><img src="assets/favorite.png" width="100%" height="auto "alt="Favorite Icon"></button>
         <p class="added">
             eBook has been added to favorites.
         </p>
@@ -441,7 +441,7 @@
                     li.innerHTML = item;
 
                     const unfavoriteButton = document.createElement("button");
-                    unfavoriteButton.textContent = "Unfavorite";
+                    unfavoriteButton.textContent = "Remove";
                     unfavoriteButton.addEventListener("click", function () {
                         const index = savedFavorites.indexOf(item);
                         if (index !== -1) {
