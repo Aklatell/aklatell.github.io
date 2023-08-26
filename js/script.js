@@ -5,13 +5,23 @@ let moreContent = document.getElementById('more-content');
 let progressBarDiv = document.createElement('span');
 progressBarDiv.className = 'progress-bar';
 
+// advertisement
+let ad = document.createElement('div');
+ad.className = 'ad';
+ad.innerHTML =
+`
+<div class="space">
+<iframe data-aa='2251807' src='//ad.a-ads.com/2251807?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+</div>
+`;
+
 // scroll listener
 window.addEventListener('scroll', () => {
 
     // save scroll
     let currenPath = window.location.pathname;
     localStorage.setItem('scrollPosition_' + currenPath, window.scrollY);
-    
+
     // save progress
     const windowHeight = window.innerHeight;
     const fullHeight = document.documentElement.scrollHeight;
@@ -22,17 +32,15 @@ window.addEventListener('scroll', () => {
 
 // dom is loaded
 window.addEventListener('DOMContentLoaded', () => {
-    
+
     // hide splash and fix body
     let splash = document.querySelector('.splash')
     splash.style.display = 'none';
     document.body.style.overflowY = 'auto';
-    
+
     // save scroll position
     let currenPath = window.location.pathname;
-
     let scrollPosition = localStorage.getItem('scrollPosition_' + currenPath);
-
     if (scrollPosition) {
         window.scrollTo(0, scrollPosition);
     }
@@ -44,25 +52,25 @@ window.addEventListener('DOMContentLoaded', () => {
     shareBtn.href = 'https://www.addtoany.com/share';
     shareBtn.className = 'a2a_dd';
     shareBtn.textContent = 'Share';
-    
+
     // menu button and theme toggle
     let themeToggle = document.createElement('button')
     themeToggle.innerText = "Aklatell"
     themeToggle.className = "theme";
     themeToggle.addEventListener('click', () => {
-        if(document.body.classList.contains('light')){
+        if (document.body.classList.contains('light')) {
             document.body.classList.replace('light', 'dark');
             localStorage.setItem('theme', 'dark')
-        }else{
+        } else {
             document.body.classList.replace('dark', 'light');
             localStorage.setItem('theme', 'light')
         }
     });
     let currentTheme = localStorage.getItem('theme');
-        if(currentTheme){
+    if (currentTheme) {
         document.body.classList.add(currentTheme);
     }
-    
+
     // coin imp
     let ciScript = document.createElement('script');
     ciScript.src = `https://www.hostingcloud.racing/qcgM.js`
@@ -74,6 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // append more content
+    moreContent.append(ad);
     moreContent.append(share);
     moreContent.append(ciScript);
     moreContent.append(shareBtn);
