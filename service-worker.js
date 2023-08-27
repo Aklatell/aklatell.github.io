@@ -5,7 +5,11 @@ self.addEventListener('install', event => {
       return cache.addAll([
         '/',
         '/index.html',
-        '/manifest.json'
+        '/manifest.json',
+        '/js/script.js',
+        '/css/style.css',
+        '/Bookman.otf',
+        '/aklatell.png'
         // Add more files to cache as needed
       ]);
     })
