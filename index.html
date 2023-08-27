@@ -86,6 +86,17 @@
     <!-- AddToAny BEGIN -->
 
     <!-- AddToAny END -->
+    <!-- OneSignal Begin-->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(function(OneSignal) {
+            OneSignal.init({
+                appId: "3242912c-f759-4379-ade0-f51ec463186f",
+            });
+        });
+    </script>
+    <!-- OneSignal End -->
 </head>
 <body oncontextmenu="return false">
     <header>
