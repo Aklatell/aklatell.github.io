@@ -52,7 +52,14 @@ window.addEventListener('DOMContentLoaded', () => {
     shareBtn.href = 'https://www.addtoany.com/share';
     shareBtn.className = 'a2a_dd';
     shareBtn.textContent = 'Share';
-
+    
+    // to home
+    let home = document.createElement('div');
+    home.className = 'home';
+    home.addEventListener('click', () => {
+        window.location.href = '../index.html';
+    });
+    
     // menu button and theme toggle
     let themeToggle = document.createElement('button')
     themeToggle.innerText = "Aklatell"
@@ -83,6 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // append more content
     moreContent.append(ad);
+    moreContent.append(home);
     moreContent.append(share);
     moreContent.append(ciScript);
     moreContent.append(shareBtn);
