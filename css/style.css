@@ -1,6 +1,6 @@
 @font-face {
     font-family: Bookman;
-    src: url('../assets/Bookman.otf');
+    src: url('../Bookman.otf');
     font-display: swap;
 }
 a {
@@ -9,6 +9,7 @@ a {
     word-break: break-word;
     cursor: pointer;
     overflow-x: scroll;
+    z-index: 5;
 }
 a:visited {
     color: #AFAFA5;
@@ -202,6 +203,15 @@ li {
     margin: auto;
     width: 320px;
     height: 50px;
+}
+.home{
+    transform: translate(-50%, -50%);
+    background: transparent;
+    position: fixed;
+    height: 250px;
+    width: 250px;
+    left: 50%;
+    top: 50%;
 }
 @keyframes fade {
     0% {
