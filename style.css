@@ -20,6 +20,7 @@ body {
     color: #B7B7B7;
     background: #222225;
     padding-bottom: 1em;
+    overflow-x: hidden;
 }
 h1 {
     text-align: center;
@@ -29,9 +30,6 @@ p {
     margin: 2em 0em 2em 0em;
     text-align: justify;
     font-size: 16px;
-}
-div:-webkit-scrollbar{
-    display: none;
 }
 .menuDiv {
     display: none;
@@ -47,7 +45,7 @@ div:-webkit-scrollbar{
     left: 0px;
     top: 0px;
 }
-.menuDiv:-webkit-scrollbar {
+.menuDiv::-webkit-scrollbar, body::-webkit-scrollbar, div::-webkit-scrollbar {
     display: none;
 }
 .menuDiv a {
@@ -66,7 +64,7 @@ div:-webkit-scrollbar{
 .menuDiv a h2:nth-child(odd) {
     margin: 6px 0px 6px 0px;
 }
-.menuDiv input{
+.menuDiv input {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
