@@ -15,9 +15,6 @@
     padding: 0px;
     margin: 0px;
 }
-::-webkit-scrollbar{
-    display: none;
-}
 body {
     margin: 2.5em;
     color: #B7B7B7;
@@ -32,6 +29,9 @@ p {
     margin: 2em 0em 2em 0em;
     text-align: justify;
     font-size: 16px;
+}
+div:-webkit-scrollbar{
+    display: none;
 }
 .menuDiv {
     display: none;
