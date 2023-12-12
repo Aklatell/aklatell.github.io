@@ -29,9 +29,9 @@ window.onload = function() {
     menuDiv.innerHTML = `
     <div class="sideAd"></div>
     <input class="findStory" type="search" placeholder="Search Story">
-    <a href="#"><h2>OUR LADY'S CHILD</h2></a>
-    <a href="#"><h2>CAT AND MOUSE IN PARTNERSHIP</h2></a>
-    <a href="#"><h2>THE FROG-KING, OR IRON HENRY</h2></a>
+    <a href="Our Lady’s Child.html"><h2>OUR LADY'S CHILD</h2></a>
+    <a href="Cat And Mouse In Partnership.html"><h2>CAT AND MOUSE IN PARTNERSHIP</h2></a>
+    <a href="The Frog-king, Or Iron Henry.html"><h2>THE FROG-KING, OR IRON HENRY</h2></a>
     `;
 
     menuBtn.onclick = function() {

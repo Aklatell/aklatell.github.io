@@ -8,10 +8,14 @@
         opacity: 1;
     }
 }
+@font-face {
+    font-family: Bookman;
+    src: url('Bookman.otf');
+    font-display: swap;
+}
 * {
-    font-family: Georgia;
+    font-family: Bookman;
     box-sizing: border-box;
-    overflow-x: hidden;
     padding: 0px;
     margin: 0px;
 }
@@ -20,7 +24,6 @@ body {
     color: #B7B7B7;
     background: #222225;
     padding-bottom: 1em;
-    overflow-x: hidden;
 }
 h1 {
     text-align: center;
