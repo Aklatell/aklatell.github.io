@@ -111,7 +111,7 @@ p {
 .sideAd {
     background: silver;
     margin: auto;
-    height: 250px;
+    height: auto;
     width: 100%;
 }
 .progressBarDiv{

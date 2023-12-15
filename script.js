@@ -37,13 +37,16 @@ window.onload = function() {
     adDiv.className = "adDiv";
     adDiv.innerHTML =
     `
+    <iframe data-aa='2251807' src='//ad.a-ads.com/2251807?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
     `;
     // menu nav
     let menuDiv = document.createElement('div');
     menuDiv.className = 'menuDiv';
     menuDiv.style.display = 'none'; // Initially hiding the menuDiv
     menuDiv.innerHTML = `
-    <div class="sideAd"></div>
+    <div class="sideAd">
+    <a href="https://a-ads.com?partner=2285945"><img src="https://a-ads.com/a_ads_banners/gif/english/200x200/simple_v1.gif" alt="Advertise with Anonymous Ads" width="100%" height="200px" /></a>
+    </div>
     <input class="findStory" type="search" placeholder="Search Story">
     <a href="Our Lady’s Child.html"><h2>OUR LADY'S CHILD</h2></a>
     <a href="Cat And Mouse In Partnership.html"><h2>CAT AND MOUSE IN PARTNERSHIP</h2></a>
@@ -74,7 +77,6 @@ window.onload = function() {
     let findStory = document.querySelector('.findStory');
     findStory.addEventListener('input', function() {
         let searchText = findStory.value.toLowerCase(); // Get the input value in lowercase for case-insensitive comparison
-
         let storyTitles = document.querySelectorAll('.menuDiv a h2');
         storyTitles.forEach(title => {
             let titleText = title.innerText.toLowerCase();
